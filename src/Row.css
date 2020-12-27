@@ -1,5 +1,6 @@
 .row {
     margin-left: 20px;
+    color: white
 }
 
 .row_posters {
@@ -26,7 +27,8 @@
 }
 
 .large_poster {
-    max-height: 250px;
+    max-height: 220px;
+    margin-right: 10px;
 }
 
 .large_poster:hover {
