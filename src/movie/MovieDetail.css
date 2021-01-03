@@ -1,0 +1,38 @@
+.movieDetail {
+    background-color: #111;
+    color: whitesmoke;
+    min-height: 1000px;
+}
+
+.backdrop_image {
+    object-fit: contain;
+    height: 300px;
+}
+
+.main_info {
+    width: 80%;
+    margin: auto;
+}
+
+.main_info h1 {
+    font-size: 2.4rem;
+    margin-left: 300px;
+    text-align: center;
+}
+
+.poster_image {
+    object-fit: contain;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    width: 200px;
+    border-radius: 5%;
+}
+
+.overview {
+    font-size: 1rem;
+    margin: auto;
+    text-align: center;
+    margin-left: 320px;
+    margin-right: 20px;
+}
