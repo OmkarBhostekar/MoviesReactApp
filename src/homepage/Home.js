@@ -7,16 +7,18 @@ import '../homepage/Home.css';
 function Home() {
     return (
         <div className="App">
-        <Nav/>
+        {/* <Nav/> */}
         <Banner/>
         {/* <Row title="Netflix Originals" fetchUrl={requests.fetchNetflixOriginals}/> */}
-        <Row title="Trending Now" fetchUrl={requests.fetchTrending} isLargePoster/>
-        <Row title="Top Rated" fetchUrl={requests.fetchTopRated}/>
-        <Row title="Action Movies" fetchUrl={requests.fetchActionMovies}/>
-        <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies}/>
-        <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies}/>
-        <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies}/>
-        <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries}/>
+        <Row title="Trending Now" fetchUrl={requests.fetchTrending} mType='both'/>
+        <Row title="Popular TV Shows" fetchUrl={requests.fetchPopulerTv} mType='tv'/>
+        <Row title="Top Rated Movies" fetchUrl={requests.fetchTopRated} mType='movie'/>
+        <Row title="Top Rated TV Shows" fetchUrl={requests.fetchTopRatedTv} mType='tv'/>
+        <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} mType='movie'/>
+        <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} mType='movie'/>
+        <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} mType='movie'/>
+        <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} mType='movie'/>
+        {/* <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} mType='movie'/> */}
         </div>
     )
 }

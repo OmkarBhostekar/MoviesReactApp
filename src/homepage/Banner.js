@@ -1,4 +1,6 @@
 import React,{useState, useEffect} from 'react'
+import { useHistory } from 'react-router-dom';
+import YouTube from 'react-youtube';
 import axios from "../axios";
 import requests from '../requests';
 import "./Banner.css"
@@ -6,6 +8,7 @@ import "./Banner.css"
 function Banner() {
 
     const [movie, setMovie] = useState([])
+    const history = useHistory()
 
     useEffect(() => {
         async function fetchData(){
@@ -17,6 +20,11 @@ function Banner() {
         fetchData()
     }, [])
 
+    function redirectToDetail(id) {
+        history.push( `/tv/${id}`)
+        console.log(`clicked on ${id}`);
+    };
+
     function truncate(str,n) {
         return str?.length > n ? str.substr(0,n-1) + "..." : str
     }
@@ -26,7 +34,7 @@ function Banner() {
         style={{
             backgroundSize: "cover",
             backgroundImage: `url(
-                "https://image.tmdb.org/t/p/original/${movie?.backdrop_path}"
+                "https://image.tmdb.org/t/p/original${movie?.backdrop_path}"
             )` ,
             backgroundPosition: "center center"
         }}
@@ -36,8 +44,8 @@ function Banner() {
         <h1 className="banner_title">{movie?.title || movie?.name || movie?.original_title}</h1>
         {/* div 2 buttons */}
         <div className="banner_buttons">
-            <button className="banner_button">Play</button>
-            <button className="banner_button">My List</button>
+            <button className="banner_button btn-play">Play</button>
+            <button className="banner_button" onClick={ () => redirectToDetail(movie?.id)}>View</button>
         </div>
         {/* description */}
         <h1 className="banner_description">{truncate(movie?.overview,300)}</h1>

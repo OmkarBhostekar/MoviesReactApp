@@ -12,7 +12,7 @@ function Nav() {
             }else handleShow(false)
         })
         return () => {
-            window.removeEventListener("scroll")
+            window.removeEventListener("scroll",()=>{})
         }
     }, [])
 
@@ -21,6 +21,7 @@ function Nav() {
             <img 
             className="nav_logo"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1198px-Netflix_2015_logo.svg.png" alt="logo"/>
+            // src="./public/logo.png" alt="logo"/>
             {/* <form id="content">
             <input type="text" name="input" class="input" id="search-input"/>
                  <button type="reset" class="search" id="search-btn"></button>

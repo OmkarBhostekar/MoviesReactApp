@@ -1,38 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+section {
+    display: flex;
+}
+
 .movieDetail {
-    background-color: #111;
     color: whitesmoke;
-    min-height: 1000px;
+    margin: 0;
 }
 
-.backdrop_image {
-    object-fit: contain;
-    height: 300px;
+.movie_info {
+    margin-left: 20px;
 }
 
-.main_info {
+* {
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+}
+
+.info_field {
+    font-weight: 400;
+    padding-bottom: 5px;
+    padding-top: 15px;
+    font-size: 0.8rem;
+    color: #999;
+}
+
+@media(max-width: 768px) {
+    section {
+        flex-direction: column;
+    }
+    .movie-detail {
+        flex-direction: column;
+    }
+}
+
+main {
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.yt {
+    width: 100%;
+    margin: 2rem;
+}
+
+.movie-detail {
+    min-height: 80vh;
+    width: 90%;
+    margin-top: 2rem;
+    background: linear-gradient( to right bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.3));
+    border-radius: 2rem;
+    z-index: 2;
+    backdrop-filter: blur(1rem);
+    display: flex;
+}
+
+.movie-metadeta {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #121212;
+    border-radius: 2rem;
+}
+
+.movie-overview {
+    flex: 2;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.movie-overview h3 {
+    margin: 0rem 1rem;
+}
+
+.movie-images {
+    flex: 1;
+    flex-direction: column;
+    max-height: 90vh;
+    overflow: scroll;
+}
+
+.movie-image {
     width: 80%;
-    margin: auto;
+    border-radius: 2rem;
+    margin: 0;
 }
 
-.main_info h1 {
-    font-size: 2.4rem;
-    margin-left: 300px;
-    text-align: center;
-}
-
-.poster_image {
+.movie-poster {
     object-fit: contain;
-    position: absolute;
-    top: 200px;
-    left: 200px;
-    width: 200px;
-    border-radius: 5%;
-}
-
-.overview {
-    font-size: 1rem;
-    margin: auto;
-    text-align: center;
-    margin-left: 320px;
-    margin-right: 20px;
+    width: 150px;
+    border-radius: 1rem;
+    margin: 1rem 0rem;
 }
