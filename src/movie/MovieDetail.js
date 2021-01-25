@@ -4,6 +4,7 @@ import YouTube from 'react-youtube';
 import axios from "../axios";
 import './MovieDetail.css';
 import movieTrailer from 'movie-trailer';
+import { Chip } from '@material-ui/core';
 function MovieDetail() {
 
     let { id } = useParams()
@@ -50,7 +51,7 @@ function MovieDetail() {
     }
 
     const opts = {
-        height: "500",
+        height: "600",
         width: "100%",
         playerVars: {
             autoplay: 1
@@ -80,10 +81,32 @@ function MovieDetail() {
                 </div>
                 <div className="movie-overview">
                     <div className="movie-numbers">
-
+                        <h1>Rating</h1>
+                        <h3>{movieDetail?.vote_average}/<span className="rating_number">10 (<span class="vote-count">{movieDetail?.vote_count}</span>)</span></h3>
+                        <h2>Genre</h2>
+                        {
+                            movieDetail?.genres.map( genre =>
+                                <Chip size="small" className="genre-chip" color="white" label={genre.name}/>
+                            )
+                        }
                     </div>
-                    <h1>Storyline</h1>
-                    <h3>{movieDetail?.overview}</h3>
+                    <div className="storyline">
+                        <h1>Storyline</h1>
+                        <h3>{movieDetail?.overview}</h3>
+                    </div>
+                    <div className="cast-title">
+                        <h1>Cast</h1>   
+                    </div>
+                    <div className="cast">
+                    {
+                        credit?.cast.map(actor => (
+                            <div className="actor">
+                                <img src={`${image_base_url}${actor.profile_path}`} alt=""/>
+                                <h4>{actor.name}</h4>
+                            </div>
+                        ))
+                    }
+                    </div>
                 </div>
                 <div className="movie-images">
                     {
